@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.NovoProjetoController">
+   <children>
+      <Button fx:id="btAddComodo" layoutX="88.0" layoutY="221.0" mnemonicParsing="false" text="Adicionar cômodo" />
+      <Label layoutX="235.0" layoutY="22.0" text="Novo Projeto">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txNProjeto" layoutX="194.0" layoutY="70.0" prefHeight="25.0" prefWidth="273.0" />
+      <Label layoutX="87.0" layoutY="74.0" text="Nome do Projeto" />
+      <Label layoutX="87.0" layoutY="114.0" text="Criar Login" />
+      <PasswordField fx:id="txCriarSenha" layoutX="194.0" layoutY="153.0" prefHeight="25.0" prefWidth="273.0" />
+      <Label layoutX="87.0" layoutY="157.0" text="Criar Senha" />
+      <TextField fx:id="txCriarLogin" layoutX="194.0" layoutY="110.0" prefHeight="25.0" prefWidth="273.0" />
+      <Button fx:id="btCriar" layoutX="88.0" layoutY="259.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Criar" />
+      <Button fx:id="btCancelar" layoutX="88.0" layoutY="301.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Cancelar" />
+      <ListView fx:id="lvComodos" layoutX="319.0" layoutY="225.0" prefHeight="110.0" prefWidth="200.0" />
+      <Label layoutX="373.0" layoutY="200.0" text="Lista de cômodos" />
+   </children>
+</AnchorPane>
