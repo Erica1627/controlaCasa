@@ -13,8 +13,13 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.KeyEvent;
 import controlacasa.ControlaCasa;
+import controlacasa.NovoProjeto;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
-import util.Util;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -26,40 +31,62 @@ public class TelaInicialController implements Initializable {
     @FXML private Button btNProjeto;
     @FXML private Button btAProjeto;
     @FXML private Button btSair;
+    @FXML
+    private Label lbControleCasa;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        btNProjeto.setOnMouseClicked((MouseEvent e)->{
-            Util.abreNovoProjeto();
-            //sair();
-        });
+        
         btNProjeto.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
-                Util.abreNovoProjeto();
-                //sair();
+                abreNovoProjeto();
+            
             }
         });
-        btAProjeto.setOnMouseClicked((MouseEvent e)->{
-            
-        });
+       
         btAProjeto.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
                 
             }
         });
-        btSair.setOnMouseClicked((MouseEvent e)->{
-           sair();
-        });
+        
         btSair.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
                 sair();
             }
         });
-    }    
+    }  
+     
+    private void  abreNovoProjeto(){
+        NovoProjeto novoProjeto = new NovoProjeto();
+       
+        try {
+            novoProjeto.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TelaInicialController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        sair();
+    }
     
     public void sair(){
         ControlaCasa.getStage().close();
+    }
+    
+    @FXML
+    private void acNovoProjeto(ActionEvent event) {
+        abreNovoProjeto();
+       
+    }
+    
+    @FXML
+    private void acAbrirProjeto(ActionEvent event) {
+         
+    }
+    
+     @FXML
+    private void acSair(ActionEvent event) {
+         sair();
     }
 }

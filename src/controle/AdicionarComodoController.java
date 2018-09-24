@@ -6,16 +6,20 @@
 package controle;
 
 import controlacasa.AdicionarComodo;
+import controlacasa.NovoProjeto;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import util.Util;
+import javafx.stage.Stage;
+
 
 /**
  * FXML Controller class
@@ -34,30 +38,43 @@ public class AdicionarComodoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        btCriar.setOnMouseClicked((MouseEvent e)->{
-            
-            Util.abreNovoProjeto();
-            sair();
-        });
+        
         btCriar.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
-                Util.abreNovoProjeto();
+                abreNovoProjeto();
                 sair();
             }
         });
-        btCancelar.setOnMouseClicked((MouseEvent e)->{
-           Util.abreNovoProjeto();
-           sair();
-        });
+        
         btCancelar.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
-                Util.abreNovoProjeto();
+                abreNovoProjeto();
                 sair();
             }
         });
     }    
-    
+    private void abreNovoProjeto(){
+        NovoProjeto novoProjeto = new NovoProjeto();
+        
+        try {
+            novoProjeto.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(AdicionarComodoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        sair();
+    }
     public void sair(){
         AdicionarComodo.getStage().close();
+    }
+
+    @FXML
+    private void acCriar(ActionEvent event) {
+        abreNovoProjeto();   
+    }
+
+    @FXML
+    private void acCancelar(ActionEvent event) {
+        abreNovoProjeto();
+        sair();
     }
 }

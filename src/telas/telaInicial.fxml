@@ -5,16 +5,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="258.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controle.TelaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="258.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.TelaInicialController">
    <children>
       <Label fx:id="lbControleCasa" layoutX="182.0" layoutY="36.0" text="CONTROLE DA CASA">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btNProjeto" layoutX="79.0" layoutY="104.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Novo Projeto" />
-      <Button fx:id="btAProjeto" layoutX="79.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Abrir Projeto" />
+      <Button fx:id="btNProjeto" layoutX="79.0" layoutY="104.0" mnemonicParsing="false" onAction="#acNovoProjeto" prefHeight="25.0" prefWidth="84.0" text="Novo Projeto" />
+      <Button fx:id="btAProjeto" layoutX="79.0" layoutY="149.0" mnemonicParsing="false" onAction="#acAbrirProjeto" prefHeight="25.0" prefWidth="84.0" text="Abrir Projeto" />
       <Button fx:id="btSair" layoutX="79.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Sair" />
    </children>
 </AnchorPane>

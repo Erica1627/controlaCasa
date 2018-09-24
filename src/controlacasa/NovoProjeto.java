@@ -41,7 +41,7 @@ public class NovoProjeto extends Application {
         stage.setTitle("Novo Projeto");
         stage.setScene(scene);
         stage.show();
-       setStage(stage);
+        setStage(stage);
     }
 
     

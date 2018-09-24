@@ -41,6 +41,6 @@ public class AdicionarComodo extends Application {
         stage.setTitle("Adicionar Cômodo");
         stage.setScene(scene);
         stage.show();
-       setStage(stage);
+        setStage(stage);
     }
 }

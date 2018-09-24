@@ -5,8 +5,14 @@
  */
 package controle;
 
+import controlacasa.AdicionarComodo;
+import controlacasa.ControlaCasa;
+import controlacasa.NovoProjeto;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,8 +21,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import util.Util;
+import javafx.stage.Stage;
+
 
 /**
  * FXML Controller class
@@ -38,32 +44,61 @@ public class NovoProjetoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        btAddComodo.setOnMouseClicked((MouseEvent e)->{
-            Util.entrarAddComodo();
-        });
-        btAddComodo.setOnKeyPressed((KeyEvent e)->{
+        
+     btAddComodo.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
-                Util.entrarAddComodo();
+                entrarAddComodo ();
             }
         });
-        btCriar.setOnMouseClicked((MouseEvent e)->{
-            //Util.entrarTelaInicial();
-            Util.sairNP();
-        });
+        
         btCriar.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
-                Util.entrarTelaInicial();
+                entrarTelaInicial();
             }
         });
-        btCancelar.setOnMouseClicked((MouseEvent e)->{
-           Util.entrarTelaInicial();
-        });
+        
         btCancelar.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
-                Util.entrarTelaInicial();
+               entrarTelaInicial();
             }
         });
-    }    
+    }   
+    
+    private void entrarAddComodo(){
+        AdicionarComodo addComodo = new AdicionarComodo();
+        try {
+            addComodo.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(NovoProjetoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        NovoProjeto.getStage().close();
+    }
+    
+    private void entrarTelaInicial(){
+        ControlaCasa telaInicial = new ControlaCasa();
+        try {
+            telaInicial.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(NovoProjetoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        NovoProjeto.getStage().close();
+    }
+
+    @FXML
+    private void addcomodo(ActionEvent event) {
+        entrarAddComodo ();
+    }
+    
+
+    @FXML
+    private void cancelar(ActionEvent event) {
+        entrarTelaInicial();
+    }
+
+    @FXML
+    private void criar(ActionEvent event) {
+         entrarTelaInicial();
+    }
 }    
     
 
