@@ -13,7 +13,7 @@
          </font>
       </Label>
       <Button fx:id="btNProjeto" layoutX="79.0" layoutY="104.0" mnemonicParsing="false" onAction="#acNovoProjeto" prefHeight="25.0" prefWidth="84.0" text="Novo Projeto" />
-      <Button fx:id="btAProjeto" layoutX="79.0" layoutY="149.0" mnemonicParsing="false" onAction="#acAbrirProjeto" prefHeight="25.0" prefWidth="84.0" text="Abrir Projeto" />
-      <Button fx:id="btSair" layoutX="79.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Sair" />
+      <Button fx:id="btAProjeto" layoutX="79.0" layoutY="150.0" mnemonicParsing="false" onAction="#acAbrirProjeto" prefHeight="25.0" prefWidth="84.0" text="Abrir Projeto" />
+      <Button fx:id="btSair" layoutX="79.0" layoutY="192.0" mnemonicParsing="false" onAction="#acSair" prefHeight="25.0" prefWidth="84.0" text="Sair" />
    </children>
 </AnchorPane>
