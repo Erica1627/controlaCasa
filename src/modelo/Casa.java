@@ -10,7 +10,7 @@ package modelo;
  * @author reide
  */
 public class Casa {
-    private long id;
+    private int id;
     private String nome;
     private String login;
     private String senha;

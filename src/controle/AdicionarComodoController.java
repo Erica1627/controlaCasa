@@ -38,7 +38,7 @@ public class AdicionarComodoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+       /* 
         btCriar.setOnKeyPressed((KeyEvent e)->{
             if(e.getCode() == KeyCode.ENTER){
                 abreNovoProjeto();
@@ -51,7 +51,7 @@ public class AdicionarComodoController implements Initializable {
                 abreNovoProjeto();
                 sair();
             }
-        });
+        });*/
     }    
     private void abreNovoProjeto(){
         NovoProjeto novoProjeto = new NovoProjeto();

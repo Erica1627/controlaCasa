@@ -10,7 +10,7 @@ package modelo;
  * @author reide
  */
 public class Comodo {
-    private long id;
+    private int id;
     private String nome;
     private double largura, comprimento;
 

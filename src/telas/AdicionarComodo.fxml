@@ -16,6 +16,6 @@
       <Label layoutX="349.0" layoutY="157.0" text="em metros" />
       <Label layoutX="349.0" layoutY="192.0" text="em metros" />
       <Button fx:id="btCriar" layoutX="312.0" layoutY="291.0" mnemonicParsing="false" onAction="#acCriar" text="Criar" />
-      <Button fx:id="btCancelar" layoutX="185.0" layoutY="291.0" mnemonicParsing="false" onAction="#acCancelar" text="Cancelar" />
+      <Button fx:id="btCancelar" layoutX="185.0" layoutY="291.0" mnemonicParsing="false" onAction="#acCancelar" onKeyPressed="#acCancelar" text="Cancelar" />
    </children>
 </AnchorPane>
